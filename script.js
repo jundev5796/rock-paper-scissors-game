@@ -1,6 +1,7 @@
 humanScore = 0;
 computerScore = 0;
 
+// computer choice
 function getComputerChoice() {
   let compRandom = Math.floor(Math.random() * 3) + 1;
 
@@ -13,9 +14,7 @@ function getComputerChoice() {
   }
 }
 
-const compFinalChoice = getComputerChoice();
-console.log(compFinalChoice);
-
+// human choice
 function getHumanChoice() {
   let humanChoice = prompt("Your Choice:");
 
@@ -28,5 +27,42 @@ function getHumanChoice() {
   }
 }
 
-const humanFinalChoice = getHumanChoice();
-console.log(humanFinalChoice);
+// play round
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === "Rock") {
+    if (computerChoice === "Rock") {
+      console.log("It is a Draw!");
+    } else if (computerChoice === "Paper") {
+      console.log("You Lose!");
+    } else if (computerChoice === "Scissors") {
+      console.log("You Win!");
+    }
+  }
+  if (humanChoice === "Paper") {
+    if (computerChoice === "Rock") {
+      console.log("You Win!");
+    } else if (computerChoice === "Paper") {
+      console.log("It is a Draw!");
+    } else if (computerChoice === "Scissors") {
+      console.log("You Lose!");
+    }
+  }
+  if (humanChoice === "Scissors") {
+    if (computerChoice === "Rock") {
+      console.log("You Lose!");
+    } else if (computerChoice === "Paper") {
+      console.log("You Win!");
+    } else if (computerChoice === "Scissors") {
+      console.log("It is a Draw!");
+    }
+  }
+}
+
+const humanSelection = getHumanChoice();
+console.log(`Player: ${humanSelection}`);
+const computerSelection = getComputerChoice();
+console.log(`Computer: ${computerSelection}`);
+
+playRound(humanSelection, computerSelection);
+
+// play game
