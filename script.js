@@ -1,3 +1,6 @@
+humanScore = 0;
+computerScore = 0;
+
 function getComputerChoice() {
   let compRandom = Math.floor(Math.random() * 3) + 1;
 
@@ -12,3 +15,18 @@ function getComputerChoice() {
 
 const compFinalChoice = getComputerChoice();
 console.log(compFinalChoice);
+
+function getHumanChoice() {
+  let humanChoice = prompt("Your Choice:");
+
+  if (humanChoice === "Rock") {
+    return "Rock";
+  } else if (humanChoice === "Paper") {
+    return "Paper";
+  } else if (humanChoice === "Scissors") {
+    return "Scissors";
+  }
+}
+
+const humanFinalChoice = getHumanChoice();
+console.log(humanFinalChoice);
