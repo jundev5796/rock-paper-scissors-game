@@ -1,3 +1,4 @@
+const container = document.querySelector("#container");
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
@@ -45,37 +46,40 @@ function getHumanChoice(button) {
 
 // play round
 function playRound(humanChoice, computerChoice) {
+  const result = document.createElement("div");
+  container.appendChild(result);
+
   if (humanChoice === "Rock") {
     if (computerChoice === "Rock") {
-      console.log("It is a Draw!");
+      result.textContent = "It is a Draw!";
     } else if (computerChoice === "Paper") {
       computerScore++;
-      console.log("You Lose!");
+      result.textContent = "You Lose!";
     } else if (computerChoice === "Scissors") {
       humanScore++;
-      console.log("You Win!");
+      result.textContent = "You Win!";
     }
   }
   if (humanChoice === "Paper") {
     if (computerChoice === "Rock") {
       humanScore++;
-      console.log("You Win!");
+      result.textContent = "You Win!";
     } else if (computerChoice === "Paper") {
-      console.log("It is a Draw!");
+      result.textContent = "It is a Draw!";
     } else if (computerChoice === "Scissors") {
       computerScore++;
-      console.log("You Lose!");
+      result.textContent = "You Lose!";
     }
   }
   if (humanChoice === "Scissors") {
     if (computerChoice === "Rock") {
       computerScore++;
-      console.log("You Lose!");
+      result.textContent = "You Lose!";
     } else if (computerChoice === "Paper") {
       humanScore++;
-      console.log("You Win!");
+      result.textContent = "You Win!";
     } else if (computerChoice === "Scissors") {
-      console.log("It is a Draw!");
+      result.textContent = "It is a Draw!";
     }
   }
 }
